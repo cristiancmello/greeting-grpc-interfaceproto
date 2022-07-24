@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.greeting.grpc.server;
+
+option java_multiple_files = true;
+option java_package = "com.greeting.grpc.gen.proto";
+
+message HelloRequest {
+    string name = 1;
+    string dog = 2;
+    bool iLoveMyDog = 3;
+}
+
+message HelloResponse {
+    string greeting = 1;
+}
+
+service GreetingService {
+    rpc hello(HelloRequest) returns (HelloResponse);
+}
